@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.CapituloPage"
+             xmlns:vm="clr-namespace:App.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:CapituloViewModel></vm:CapituloViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+
+                <Button Text="Voltar" Command="{Binding VoltarCommandClicked}"/>
+
+                <Label Text="{Binding Capitulo.TituloCapitulo}" FontSize="20" HorizontalOptions="Center"/>
+
+            <Label Text="{Binding Capitulo.Texto}" Margin="20" VerticalTextAlignment="Center"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.PerfilPage"
+             Icon="profile.png"
+             xmlns:vm="clr-namespace:App.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:PerfilViewModel></vm:PerfilViewModel>
+    </ContentPage.BindingContext>
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <BoxView BackgroundColor="LightGray" Grid.Row="0"/>
+
+        <BoxView Grid.Row="1" HeightRequest="100"/>
+
+        <Image Source="photo.png" HorizontalOptions="Center" VerticalOptions="End"
+               WidthRequest="50" HeightRequest="50" TranslationY="25"/>
+
+        <Label Text="{Binding Perfil.Nome}" HorizontalOptions="Center" Grid.Row="1"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" HorizontalOptions="Center">
+                <Label Text="Email:"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" HorizontalOptions="StartAndExpand">
+                <Label Text="{Binding Perfil.Email}"/>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" HorizontalOptions="Center">
+                <Label Text=""/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" HorizontalOptions="StartAndExpand">
+                <Label Text=""/>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" HorizontalOptions="Center">
+                <Label Text="Data:"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" HorizontalOptions="StartAndExpand">
+                <Label Text="{Binding Perfil.DataNascimento}"/>
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="6">
+            <StackLayout HorizontalOptions="Center">
+                <Button Text="Sair" Command="{Binding SairCommandClicked}" WidthRequest="200"></Button>
+            </StackLayout>
+        </Grid>
+       
+    </Grid>
+</ContentPage>

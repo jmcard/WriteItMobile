@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.HistoriaPage"
+             xmlns:vm="clr-namespace:App.ViewModels"
+             xmlns:tapped="clr-namespace:App.Views.Components">
+
+    <ContentPage.BindingContext>
+        <vm:HistoriaViewModel></vm:HistoriaViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+
+                <Button Text="Voltar" Command="{Binding VoltarCommandClicked}"/>
+
+                <!--Banner Historia-->
+            <Image Source="livro.png"  HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="End" Margin="20"/>
+
+            <!--Conteudo Historia-->
+            <Label Text="{Binding Historia.TituloHistoria}" FontSize="20" Margin="10" HorizontalOptions="Center"/>
+                <Label Text="{Binding Historia.Categoria}" Font="12" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="{Binding Historia.Sinopse}" FontSize="12" Margin="10" HorizontalOptions="Center"/>
+
+                <Label Text="Capitulos" HorizontalOptions="Center" FontSize="15"  Margin="10"/>
+                <ListView ItemsSource="{Binding ListaCapitulo}" 
+                      SelectedItem="{Binding CapituloSelecionado}" 
+                      tapped:ItemTappedAttached.Command="{Binding CapituloTappedCommand}"
+                      HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label FontSize="Small" Text="{Binding TituloCapitulo}" Margin="10"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

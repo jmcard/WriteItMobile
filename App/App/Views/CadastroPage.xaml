@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.CadastroPage"
+             xmlns:vm="clr-namespace:App.ViewModel">
+
+    <ContentPage.BindingContext>
+        <vm:CadastroViewModel></vm:CadastroViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"  Margin="20">
+            <Entry Text="{Binding Perfil.Nome}" Placeholder="Nome: " FontSize="Small"></Entry>
+            <Entry Text="{Binding Perfil.Apelido}" Placeholder="Apelido: " FontSize="Small"></Entry>
+            <Entry Text="{Binding Perfil.Email}" Placeholder="Email: " FontSize="Small"></Entry>
+            <Entry Text="{Binding Perfil.Senha}" Placeholder="Senha: " FontSize="Small" IsPassword="True"></Entry>
+            <Entry Text="{Binding Perfil.DataNascimento}" Placeholder="Data de Nascimento: " FontSize="Small"></Entry>
+
+            <Button Text="Cadastrar" Command="{Binding CadastrarCommandClicked}"></Button>
+            <Button Text="Voltar" Command="{Binding VoltarClickedCommand}"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

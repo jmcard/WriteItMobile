@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.LoginPage"
+             xmlns:vm="clr-namespace:App.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="20">
+            <Image Source="livros.png" WidthRequest="80" HeightRequest="80"/>
+            <Entry Text="{Binding Login.Login}" Placeholder="Email: " FontSize="Small"></Entry>
+            <Entry Text="{Binding Login.Senha}" Placeholder="Senha: " FontSize="Small" IsPassword="True"></Entry>
+
+            <Button Text="Entrar" Command="{Binding EntrarClickedCommand}"></Button>
+            <Button Text="Cadastrar" Command="{Binding CadastroClickedCommand}"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.CategoriaPage"
+             xmlns:vm="clr-namespace:App.ViewModels"
+             Icon="categoria.png"
+             xmlns:tapped="clr-namespace:App.Views.Components">
+    
+    <ContentPage.BindingContext>
+        <vm:CategoriaViewModel></vm:CategoriaViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Categorias" HorizontalOptions="Center" FontSize="15" FontAttributes="Bold"/>
+            <ListView ItemsSource="{Binding ListaCategoria}" 
+                      SelectedItem="{Binding CategoriaSelecionada}"
+                      tapped:ItemTappedAttached.Command="{Binding CatTappedCommand}"
+                      HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label FontSize="Small" Text="{Binding NomeCategoria}" Margin="10"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

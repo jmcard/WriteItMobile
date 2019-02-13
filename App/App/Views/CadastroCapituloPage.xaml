@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.CadastroCapituloPage"
+             xmlns:vm="clr-namespace:App.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:CadCapViewModel></vm:CadCapViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Entry Text="{Binding Capitulo.TituloCapitulo}" Placeholder="Titulo: " FontSize="Small"></Entry>
+
+            <Label Text="Texto: "></Label>
+            <Editor Text="{Binding Capitulo.Texto}" HeightRequest="180" BackgroundColor="LightGray"></Editor>
+
+            <Button Text="Cadastrar" Command="{Binding CadCapCommandClicked}"></Button>
+            <Button Text="Voltar" Command="{Binding VoltarClickedCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.CadastroHistoriaPage"
+             xmlns:vm="clr-namespace:App.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:CadHistViewModel></vm:CadHistViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand"  Margin="20">
+            <Entry Text="{Binding Historia.TituloHistoria}" Placeholder="Titulo: " FontSize="Small"></Entry>
+
+            <Label Text="Sinopse: "></Label>
+            <Editor Text="{Binding Historia.Sinopse}" HeightRequest="180" BackgroundColor="LightGray"></Editor>
+
+            <Label Text="Selecione: "></Label>
+            <Picker Title="Categoria" ItemsSource="{Binding ListaCategoria}" ItemDisplayBinding="{Binding NomeCategoria}" SelectedItem="{Binding CategoriaSelecionada.IdCategoria}"/>
+
+            <Button Text="Cadastrar" Command="{Binding CadastrarCommandClicked}"></Button>
+            <Button Text="Voltar" Command="{Binding VoltarClickedCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
