@@ -47,13 +47,13 @@ namespace App.Layers.Service
         }
         public static String Auth()
         {
-            var _securityKey = "oH1Df1B9qlFzyreWvnLdW1spE"; // Recebido por email
-            var _clientSecret = "7659733653278729108";
-            var _clientId = "3MVG9zlTNB8o8BA3A_5yAyYlAgsNcupQtBmDC.hunKP2OJ00IMscoi7GctPIOSMdvlJeOUFfYGppPrGUid6ct";
-            var _redirectUri = "http://www.fiap.com.br";
-            var _grantAcess = "password";
-            var _userName = "julia.cardoso1306@gmail.com";
-            var _password = "FF!130697" + _securityKey;
+            var _securityKey = ""; // Recebido por email
+            var _clientSecret = "";
+            var _clientId = "";
+            var _redirectUri = "";
+            var _grantAcess = "";
+            var _userName = "";
+            var _password = "" + _securityKey;
             var _urlSalesForceAuth = "https://login.salesforce.com/services/oauth2/token";
 
             var parameters = new Dictionary<string, string> {
