@@ -35,7 +35,7 @@ namespace App.Layers.Service
                     _historia.TituloHistoria = objeto["records"][i]["Name"].ToString();
                     _historia.Sinopse = objeto["records"][i]["Sinopse__c"].ToString();
                     _historia.IdHistoria = objeto["records"][i]["Id"].ToString();
-                    //_historia.Categoria = objeto["record"][i]["Categoria__c"]["type"].ToString();
+              
 
                     historias.Add(_historia);
                 }
@@ -74,8 +74,7 @@ namespace App.Layers.Service
                     _historia.TituloHistoria = objeto["records"][i]["Name"].ToString();
                     _historia.Sinopse = objeto["records"][i]["Sinopse__c"].ToString();
                     _historia.IdHistoria = objeto["records"][i]["Id"].ToString();
-                    //_historia.Categoria.NomeCategoria = objeto["records"][i]["Categoria__c"]["Name"].ToString();
-                    //_historia.Categoria.NomeCategoria = objeto["records"][i]["Name"].ToString();
+                    
 
                     historias.Add(_historia);
                 }
